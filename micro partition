@@ -1,0 +1,9 @@
+A micro-partition in Snowflake is a small, contiguous unit of storage that contains a specific range of rows from a table: 
+Size: Each micro-partition contains between 50 MB and 500 MB of uncompressed data 
+Format: Data within a micro-partition is organized in a columnar format 
+Automatic: Snowflake automatically creates micro-partitions when data is loaded into a table, so users don't need to define or maintain them 
+Immutable: Data within a micro-partition cannot be changed once it's created . 
+
+Micro-partitions can improve query performance, data optimization, concurrency, and scalability. For example, when a query is run, the number of partitions scanned is compared to the total number of partitions. A query with good pruning will have a small number of partitions scanned, which can lead to faster query execution. 
+Snowflake also automatically tunes the optimal micro-partition size for workloads. These optimizations occur in the background and don't require any user action. 
+
